@@ -1,50 +1,115 @@
-# React + TypeScript + Vite
+# App Buscador de Perfiles de GitHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Esta aplicación es una herramienta sencilla que permite buscar perfiles de GitHub utilizando la API oficial de GitHub. Con ella, puedes ingresar un nombre de usuario y obtener información relevante sobre el perfil, como el nombre completo, biografía, ubicación y su avatar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React** (v18.3.1): Biblioteca para construir interfaces de usuario.
+- **TypeScript** (v5.6.2): Añade tipado estático al desarrollo.
+- **Vite** (v6.0.5): Herramienta de desarrollo rápida y eficiente.
+- **Axios** (v1.7.9): Cliente HTTP para consumir la API de GitHub.
+- **ESLint**: Configurado con soporte para React y TypeScript.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Características
 
-- Configure the top-level `parserOptions` property like this:
+- Busca usuarios de GitHub por nombre de usuario.
+- Muestra información detallada sobre el usuario, incluyendo:
+  - Nombre de usuario.
+  - Nombre completo (si está disponible).
+  - Biografía.
+  - Ubicación.
+  - Imagen del avatar del usuario.
+- Manejo de errores para usuarios no encontrados o problemas de conexión.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Estructura del Proyecto
+
+```
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── img/
+│   │       └── github.svg
+│   ├── components/
+│   │   ├── App-buscador.tsx
+│   │   └── UserGithub.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Instalación
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clona este repositorio en tu máquina local:
+   ```bash
+   git clone https://github.com/tu_usuario/app-buscador-user-github.git
+   ```
+2. Accede al directorio del proyecto:
+   ```bash
+   cd app-buscador-user-github
+   ```
+3. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Uso
+
+### Ejecutar en modo desarrollo
+
+Inicia el servidor de desarrollo con el siguiente comando:
+
+```bash
+npm run dev
 ```
+
+El proyecto estará disponible próximamente.
+
+### Crear una build para producción
+
+```bash
+npm run build
+```
+
+Los archivos de producción se generarán en la carpeta `dist/`.
+
+### Previsualizar la build de producción
+
+```bash
+npm run preview
+```
+
+## Scripts Disponibles
+
+- **`dev`**: Inicia el servidor de desarrollo.
+- **`build`**: Genera los archivos para producción.
+- **`lint`**: Ejecuta ESLint para identificar problemas de estilo o errores.
+- **`preview`**: Previsualiza la build de producción.
+
+## Configuración de ESLint
+
+El archivo `eslint.config.js` incluye configuraciones para:
+
+- Reglas recomendadas de JavaScript y TypeScript.
+- Soporte para React y hooks de React.
+- Ignorar la carpeta `dist`.
+
+## Estilos
+
+Los estilos están definidos en el archivo `src/index.css` usando variables CSS y principios de diseño responsive.
+
+## creador
+
+https://github.com/RodrDevs80
+
+## Licencia
+
+Este proyecto está bajo la [Licencia MIT](./LICENSE).
